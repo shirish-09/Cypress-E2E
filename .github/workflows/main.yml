@@ -8,11 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14, 16]
+    runs-on: windows-latest 
 
     steps:
     - name: Checkout repository
@@ -21,7 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '14.x'  # This will use the latest 14.x version
 
     - name: Install dependencies
       run: npm install
